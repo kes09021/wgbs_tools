@@ -27,15 +27,15 @@ python setup.py
 ### Genome configuration
 At least one reference genome must be configured (takes a few minutes).
 ```bash
-wgbstools init_genome GENOME_NAME
+./wgbstools init_genome GENOME_NAME
 # E.g, 
-wgbstools init_genome hg19
-wgbstools init_genome mm9
+./wgbstools init_genome hg19
+./wgbstools init_genome mm9
 ```
 `wgbstools` downloads the requested reference FASTA file from the [UCSC website](https://hgdownload.soe.ucsc.edu/downloads.html).
 If you prefer using your own reference FASTA, specify the path to the FASTA as follows.
 ```bash
-wgbstools init_genome GENOME_NAME --fasta_path /path/to/genome.fa
+./wgbstools init_genome GENOME_NAME --fasta_path /path/to/genome.fa
 ```
 
 #### Dependencies
@@ -52,7 +52,7 @@ wgbstools init_genome GENOME_NAME --fasta_path /path/to/genome.fa
 ### Usage examples
 Now you can generate `pat.gz` and `beta` files out of `bam` files:
 ```bash
-wgbstools bam2pat Sigmoid_Colon_STL003.bam
+./wgbstools bam2pat Sigmoid_Colon_STL003.bam
 # output:
 # Sigmoid_Colon_STL003.pat.gz
 # Sigmoid_Colon_STL003.beta
@@ -61,13 +61,13 @@ wgbstools bam2pat Sigmoid_Colon_STL003.bam
 Once you have `pat` and `beta` files, you can use wgbstools to visualize them. For example:
 
 ```bash
-wgbstools vis Sigmoid_Colon_STL003.pat.gz -r chr3:119528843-119529245
+./wgbstools vis Sigmoid_Colon_STL003.pat.gz -r chr3:119528843-119529245
 ```
 <!--![alt text](docs/img/colon.pat.png "pat vis example" =100x100)-->
 <img src="docs/img/colon.pat.png" width="500" height="400" />
 
 ```bash
-wgbstools vis *.beta -r chr3:119528843-119529245 --heatmap
+./wgbstools vis *.beta -r chr3:119528843-119529245 --heatmap
 ```
 <!--![alt text](docs/img/colon.beta.png "beta vis example")-->
 <img src="docs/img/colon.beta.png" width="450" height="600" />
